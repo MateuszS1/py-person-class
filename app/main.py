@@ -18,9 +18,19 @@ def create_person_list(people: list) -> list:
     all_people = Person.people
     for person_data in people:
         if person_data.get("wife") is not None:
-            all_people[person_data.get("name")].wife = all_people[person_data.get("wife")]
+            all_people[
+                person_data.get("name")
+            ].wife = (
+                all_people)[
+                person_data.get("wife")
+            ]
 
         if person_data.get("husband") is not None:
-            all_people[person_data.get("name")].husband = all_people[person_data.get("husband")]
+            all_people[
+                person_data.get("name")
+            ].husband = (
+                all_people)[
+                person_data.get("husband")
+            ]
 
     return people_data
