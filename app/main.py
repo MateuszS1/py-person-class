@@ -9,14 +9,17 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    [Person(person.get("name"), person.get("age")) for person in people]
+    people_data = [
+        Person(person_data.get("name"), person_data.get("age"))
+        for person_data in people
+    ]
 
     all_people = Person.people
-    for person in people:
-        if person.get("wife") is not None:
-            all_people[person.get("name")].wife = all_people[person.get("wife")]
+    for person_data in people:
+        if person_data.get("wife") is not None:
+            all_people[person_data.get("name")].wife = all_people[person_data.get("wife")]
 
-        if person.get("husband") is not None:
-            all_people[person.get("name")].husband = all_people[person.get("husband")]
+        if person_data.get("husband") is not None:
+            all_people[person_data.get("name")].husband = all_people[person_data.get("husband")]
 
-    return list(Person.people.values())
+    return people_data
